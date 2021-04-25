@@ -1,0 +1,13 @@
+Este projeto é estruturado da seguinte maneira:
+
+	-	serialize_model.py		:	Treina os dados e cria um modelo serializado para ser utilizado pela API;
+	-	predictor.py			:	Implementa o preditor
+	-	flask_server.py:		:	Implementa a API localmente
+	-	predict_price.py		:	Recebe a entrada do usuário e requisita para a API o valor de preço predito, imprime-o no console
+
+A chamada para predição é feita mediante a inicialização do servidor, que só pode ser feito após a serialização do modelo, através dos seguintes comandos:
+
+	python serialize_model.py -random_state=33 -max_leaf_nodes=24
+	python flask_server.py
+	python predict_price.py -Zona="RL" -Area=9600 -AnoConstrucao=1976 -QualidadeAquecimento="Ex" -Banheiros=2 -Quartos_t1=3 -Quartos_t2=4 -Comodos=6 -Lareiras=1 -Garagem=2 -Qualidade=6
+
